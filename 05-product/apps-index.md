@@ -13,7 +13,7 @@ apps: []
 # apps:
 #   - slug: {{SLUG}}-web
 #     repo: github.com/van4oza/{{SLUG}}-web
-#     local_path: ~/projects/ventures/{{SLUG}}-web/
+#     local_path: ~/.cyrus/repos/{{SLUG}}-web/
 #     purpose: "customer-facing web app"
 #     stack: "Next.js, Postgres, Vercel"
 #     ci: github.com/van4oza/{{SLUG}}-web/actions
