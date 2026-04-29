@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./clients/raw/**)",
+      "Read(./finance/raw/**)",
+      "Read(./secrets/**)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./data/private/**)",
+      "Write(./clients/raw/**)",
+      "Write(./finance/raw/**)",
+      "Write(./secrets/**)",
+      "Write(./.env)",
+      "Write(./.env.*)",
+      "Write(./data/private/**)",
+      "Edit(./clients/raw/**)",
+      "Edit(./finance/raw/**)",
+      "Edit(./secrets/**)",
+      "Edit(./.env)",
+      "Edit(./.env.*)",
+      "Edit(./data/private/**)",
+      "MultiEdit(./clients/raw/**)",
+      "MultiEdit(./finance/raw/**)",
+      "MultiEdit(./secrets/**)",
+      "MultiEdit(./.env)",
+      "MultiEdit(./.env.*)",
+      "MultiEdit(./data/private/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/pre-tool-use.py" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/post-tool-use.py" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/stop.py" }
+        ]
+      }
+    ]
+  }
+}

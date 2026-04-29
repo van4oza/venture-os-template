@@ -1,0 +1,22 @@
+# Sensitive paths — also denied in .claude/settings.json and by PreToolUse hook.
+clients/raw/
+finance/raw/
+secrets/
+.env
+.env.*
+data/private/
+
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+.obsidian/
+
+# Bootstrap artefacts
+*.bak
+
+# Python hook caches (.claude/hooks/*.py)
+__pycache__/
+*.pyc
