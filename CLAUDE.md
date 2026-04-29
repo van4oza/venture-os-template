@@ -81,10 +81,9 @@ Three hooks live in `.claude/hooks/` and are wired in `.claude/settings.json`:
 
 ## Cross-repo links (§3.10–§3.11)
 
-Product code lives in **sibling** repos at `~/.cyrus/repos/<slug>-<app>/`, never
-nested here. The bridge is `05-product/apps-index.md` (YAML manifest of `slug + repo +
-local_path + purpose + stack + ci`). On the code-repo side, each app's `CLAUDE.md`
-references this venture-os by URL.
+Product code lives in **sibling** repos, never nested here. The bridge is
+`05-product/apps-index.md` (YAML manifest of `slug + repo + purpose + stack + ci`). On
+the code-repo side, each app's `CLAUDE.md` references this venture-os by URL.
 
 Avoid: filesystem nesting, submodules, central index databases.
 
